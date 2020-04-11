@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+			<context-param>
+			<param-name>driver</param-name>
+			<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+		</context-param>
+		<context-param>
+			<param-name>url</param-name>
+			<param-value>jdbc:oracle:thin:@localhost:1521:orcl</param-value>
+		</context-param>
+		<context-param>
+			<param-name>user</param-name>
+			<param-value>system</param-value>
+		</context-param>
+		<context-param>
+			<param-name>pwd</param-name>
+			<param-value>manager</param-value>
+		</context-param>	
+	<servlet>
+		<servlet-name>Employee</servlet-name>
+		<servlet-class>com.amdocs.servlet.EmployeeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Employee</servlet-name>
+		<url-pattern>/emp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>test</servlet-name>
+		<servlet-class>com.amdocs.servlet.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>test</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+</web-app>
