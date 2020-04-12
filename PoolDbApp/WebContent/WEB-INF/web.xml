@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <display-name>PoolDbApp</display-name>
+  <welcome-file-list>
+    <welcome-file>register.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+	<servlet-name>Corona</servlet-name>  
+  	<servlet-class>com.amdocs.servlet.CoronaRegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Corona</servlet-name>
+  	<url-pattern>/save</url-pattern>
+  </servlet-mapping>
+</web-app>
