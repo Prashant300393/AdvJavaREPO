@@ -29,7 +29,7 @@ public class EmployeeServlet extends HttpServlet {
 		ResultSet rs = null;
 		ServletConfig config = null;
 		String driver, url, user, pwd = null;
-		RequestDispatcher rd = null;
+		RequestDispatcher rd = null, rd1 = null, rd2 = null;
 		
 		try {
 
@@ -38,7 +38,11 @@ public class EmployeeServlet extends HttpServlet {
 
 			// set Content Response Type
 			res.setContentType("text/html");
-
+			
+			// HeaderServlet called
+			rd1 = req.getRequestDispatcher("/headerurl");
+			rd1.include(req, res);
+			
 			// READ FORM data
 			empNo = Integer.parseInt(req.getParameter("empno"));
 
@@ -130,7 +134,11 @@ public class EmployeeServlet extends HttpServlet {
 				se.printStackTrace();
 			}
 			// HOME LINK
-			pw.print("<br><br><a href = 'input.html'>HOME</a>");
+			pw.print("<br><br><b><a href = 'input.html'>HOME</a></b>");
+			
+			// FooterHtml called
+			rd2 = req.getRequestDispatcher("footer.html");
+			rd2.include(req, res);
 			
 			try {
 				// close JDBC objects	
