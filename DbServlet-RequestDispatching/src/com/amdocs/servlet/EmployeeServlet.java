@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -86,7 +87,15 @@ public class EmployeeServlet extends HttpServlet {
 			pw.println("<h1 style='color:red'>This will be discarded by rd.forward() method</h1>");
 			
 //			rd = req.getRequestDispatcher("/errorurl");
-			rd = req.getRequestDispatcher("errorurl");
+//			rd = req.getRequestDispatcher("errorurl");
+			
+			/*			ServletContext context = getServletContext();
+						rd = context.getRequestDispatcher("/errorurl");
+			*/
+			
+			ServletContext context = getServletContext();
+			rd = context.getNamedDispatcher("err");	// Logical name of the ErrorServlet
+			
 			System.out.println("before forward it will execute");
 			rd.forward(req, res);
 			System.out.println("after forward it will execute");

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/errorurl")
+@WebServlet(value = "/errorurl", name = "err")
 public class ErrorServlet extends HttpServlet{
 
 	@Override
