@@ -67,8 +67,7 @@ public class StateGstServlet extends HttpServlet{
 		pw.println("<a href='index.html'>Home</a>");
 		
 		pw.close();
-		
-		
+	
 	}
 	
 	@Override
